@@ -1,3 +1,3 @@
 module gitlab.com/user19820/passwd
 
-go 1.25.4
+go 1.25
