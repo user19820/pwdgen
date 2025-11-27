@@ -1,0 +1,25 @@
+name: Generate new version string
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  semver:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Install svu
+        shell: bash
+        run: sudo apt install svu -y
+      - name: Generate new git tag
+        shell: bash
+        run: |
+          git tag $(svu next)
+          git push --tags
+
