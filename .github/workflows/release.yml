@@ -1,9 +1,9 @@
 name: Create releases
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_run:
+    workflows: ["Generate new version string"]
+    types: [completed]
 
 permissions:
   contents: write
