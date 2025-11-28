@@ -1,4 +1,4 @@
-.PHONY: lint, run
+.PHONY: lint, run, clean
 
 LEN ?= 20
 
@@ -7,3 +7,6 @@ lint:
 
 run:
 	@go run . $(LEN)
+
+clean:
+	@rm -rf dist/
