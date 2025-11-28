@@ -7,6 +7,3 @@ lint:
 
 run:
 	@go run . $(LEN)
-
-clean:
-	@rm -rf dist/
