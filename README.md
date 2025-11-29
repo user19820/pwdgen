@@ -1,4 +1,4 @@
-# Passwd
+# Pwdgen
 
 Simple password generator. Uses an extended character set and imposes minimum
 length requirement to (hopefully) achieve decently strong passwords.
