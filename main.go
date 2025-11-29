@@ -55,7 +55,7 @@ func generatePasswd(lenPwd int) (string, error) {
 
 func printHelp() {
 	fmt.Println(`
-passwd, a minimal password generator
+pwdgen, a minimal password generator
 
 args: desired length of the password
 flags:
