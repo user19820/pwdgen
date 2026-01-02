@@ -1,4 +1,4 @@
-package main
+package clipboard
 
 import (
 	"bytes"
@@ -21,7 +21,7 @@ const (
 	windowManagerInvalid windowManager = ""
 )
 
-func copyToClipboard(pwd string) error {
+func Copy(pwd string) error {
 	wMng, wMngErr := detectX11OrWayland()
 	if wMngErr != nil {
 		return wMngErr

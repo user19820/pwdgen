@@ -1,9 +1,8 @@
-.PHONY: lint, run, clean
-
-LEN ?= 20
+.PHONY: lint, build
 
 lint:
-	@golangci-lint run
+	@golangci-lint run ./...
 
-run:
-	@go run . $(LEN)
+build:
+	@go build -o temp cmd/pwdgen/main.go
+
