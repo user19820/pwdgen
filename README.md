@@ -9,7 +9,7 @@ pwdgen should support darwin, windows and linux, though linux and windows suppor
 ## Commands
 
 - `init`: sets up pwdgen
-- `gen <name> [<length>]`: generates a random password, which is stored with name <name>
-and has <length> number of chars. <length> is optional and defaults to 25 characters.
-- `get <name>`: retrieves the password with <name>, if it exists.
+- `gen <name> [<length>]`: generates a random password, which is stored with _name_ 
+and has _length_ number of chars. _length_ is optional and defaults to 25 characters.
+- `get <name>`: retrieves the password with _name_, if it exists.
 
