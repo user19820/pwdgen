@@ -1,4 +1,4 @@
-package main
+package clipboard
 
 import (
 	"errors"
@@ -29,7 +29,7 @@ var (
 	gUnlock = kernel.MustFindProc("GlobalUnlock")
 )
 
-func copyToClipboard(pwd string) error {
+func Copy(pwd string) error {
 	/*
 		ASIDE: windows works way different.
 		I have to call Win32 APIs, hence syscall.MustLoadDLL's.

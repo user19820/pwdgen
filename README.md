@@ -1,21 +1,15 @@
-# Pwdgen
+# pwdgen
 
-Simple password generator. Uses an extended character set and imposes minimum
-length requirement to (hopefully) achieve decently strong passwords.
+Simple password manager. Generates random passwords of specified length (default 20 chars)
+and stores them with a given name. The passwords can then be retrieved later using the same name and
+stored in your system clipboard.
 
-IMPORTANT NOTE: Results are directly copied to the user's clipboard.
+pwdgen should support darwin, windows and linux, though linux and windows support is currently untested.
 
-Supports:
-- darwin
-- windows (needs testing!)
-- linux (needs testing!)
+## Commands
 
-TODO:
-- research better password generation algorithms
-
-Note on implementation:
-In this project I am experimenting with the use of OS-specific compilation.
-Basically, `copyToClipboard` is implemented separately for macOS, Windows and linux
-and during comptime the compiler picks the implementation which allows the program to
-run.
+- `init`: sets up pwdgen
+- `gen <name> [<length>]: generates a random password, which is stored with name <name>
+and has <length> number of chars. <length> is optional and defaults to 25 characters.
+- `get <name>: retrieves the password with <name>, if it exists.
 

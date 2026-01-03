@@ -1,9 +1,9 @@
-package main
+package clipboard
 
 import "os/exec"
 
 //nolint:noctx // there is no real reason to use context
-func copyToClipboard(pwd string) error {
+func Copy(pwd string) error {
 	cmd := exec.Command("pbcopy")
 
 	in, pipeErr := cmd.StdinPipe()
