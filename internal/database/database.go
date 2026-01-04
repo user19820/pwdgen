@@ -80,17 +80,11 @@ func GetHandle() (*sql.DB, error) {
 }
 
 func Store(db *sql.DB, name, pwd string) error {
-	_, err := Retrieve(db, name)
-	if err != nil && !errors.Is(err, sql.ErrNoRows) {
-		return err
+	_, err := db.Exec(insertPwd, name, pwd)
+	if err != nil {
+		return errors.New("password already exists")
 	}
-
-	if errors.Is(err, sql.ErrNoRows) {
-		fmt.Println("hey!")
-	}
-
-	_, err = db.Exec(insertPwd, name, pwd)
-	return err
+	return nil
 }
 
 func Retrieve(db *sql.DB, name string) (string, error) {

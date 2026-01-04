@@ -42,9 +42,8 @@ func Init() (Cmd, error) {
 	args := flag.Args()
 	numArgs := len(args)
 
-	fmt.Println(args)
-
 	if numArgs == 0 {
+		printHelp()
 		return Cmd{}, errors.New("command not specified")
 	}
 

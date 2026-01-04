@@ -27,9 +27,7 @@ func main() {
 	switch cmd.Type {
 	case args.CmdGen:
 		if genPwdErr := genPwd(cmd); genPwdErr != nil {
-			if cmd.Debug {
-				fmt.Println(genPwdErr.Error())
-			}
+			fmt.Println(genPwdErr.Error())
 			os.Exit(1)
 		}
 
@@ -41,16 +39,12 @@ func main() {
 				os.Exit(0)
 			}
 
-			if cmd.Debug {
-				fmt.Println(getPwdErr.Error())
-			}
+			fmt.Println(getPwdErr.Error())
 			os.Exit(1)
 		}
 	case args.CmdInit:
 		if initErr := initPwdgen(); initErr != nil {
-			if cmd.Debug {
-				fmt.Println(initErr.Error())
-			}
+			fmt.Println(initErr.Error())
 
 			os.Exit(1)
 		}
